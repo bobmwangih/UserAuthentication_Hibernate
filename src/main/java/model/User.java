@@ -1,7 +1,13 @@
 package model;
 
+import javax.persistence.Id;
+
+import org.hibernate.annotations.Entity;
+
+@Entity
 public class User {
 
+	@Id
 	private int id;
 	private String email;
 	private String password;

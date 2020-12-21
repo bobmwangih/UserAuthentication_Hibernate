@@ -13,11 +13,13 @@ import model.User;
 public class UserDaoImpl implements UserDao{
 	SessionFactory sf = new Configuration().configure().buildSessionFactory();
 	
-	public int save(User u) throws Exception {
+	public void save(User u) throws Exception {
+		
 		Session session = sf.openSession();
 		session.beginTransaction();
-		session.save()
-		return 0;
+		session.save(u);
+		session.getTransaction().commit();
+		session.close();
 	}
 
 	public boolean findLogInMatch(String email, String password) throws Exception {

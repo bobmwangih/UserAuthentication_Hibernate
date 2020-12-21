@@ -2,7 +2,8 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-	<bean id="">
-	
+	<bean id="bizLogic" class = "business.UserBusinessImpl">
+		<property name ="dao" ref ="dataAccessObj"/>
 	</bean>
+	<bean id = "dataAccessObj" class ="dao.UserDaoImpl"></bean>
 </beans>
